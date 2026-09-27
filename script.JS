@@ -93,3 +93,21 @@ document.addEventListener("DOMContentLoaded", function() {
     // Masukkan log awal saat web pertama kali dimuat
     ubahStatus('NORMAL');
 });
+// --- FUNGSI PINDAH TAB MENU ---
+function bukaTab(namaTab, elemenMenu) {
+    // 1. Sembunyikan semua halaman tab
+    const semuaTab = document.querySelectorAll('.tab-content');
+    semuaTab.forEach(tab => {
+        tab.classList.remove('active');
+    });
+
+    // 2. Hilangkan tanda highlight dari semua menu sidebar
+    const semuaMenu = document.querySelectorAll('.nav-item');
+    semuaMenu.forEach(menu => {
+        menu.classList.remove('active');
+    });
+
+    // 3. Tampilkan halaman yang dipilih dan beri tanda pada menu yang diklik
+    document.getElementById(namaTab).classList.add('active');
+    elemenMenu.classList.add('active');
+}
